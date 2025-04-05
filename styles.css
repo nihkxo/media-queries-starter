@@ -295,7 +295,7 @@ p{
 	fill: var(--coral);
 }
 
-/* TO DO: Add the first media query here */
+/* DONE: Add the first media query here */
 /* 
     Add the styles included below after uncommenting them,
     then add the following selectors and styles:  
@@ -305,22 +305,41 @@ p{
     - adjust the ul in the nav to justify the items in it with space between
     - adjust the list items in the navigation so that they each have a flex basis of 20% 
 */
-
-    /* h1{
+@media screen and (min-width: 550px) {
+    h1{
         margin: 0;
         font-size: 2.75rem;
     }
-
     #section1{
         height: 500px;
     }
-
     #section1 div{
         border: none;
-    } */
+    }
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    header>a {
+        margin: 0;
+        flex-basis: 15%;
+    }
+    nav {
+        flex-basis: 100%;
+    }
+    nav ul {
+        justify-content: space-between;
+    }
+    nav li {
+        flex-basis: 20%;
+    }
+}
 
 
-/* TO DO: Add the second media query here */
+/* DONE: Add the second media query here */
 /* 
     Add the styles included below after uncommenting them,
     then add the following selectors and styles:  
@@ -345,3 +364,35 @@ p{
         border-top: 8px solid var(--gray);
         margin: 2rem auto 1rem;
     } */
+@media screen and (min-width: 700px) {
+    
+    header {
+        flex-wrap: nowrap;
+        padding: 3rem 1rem 2rem;
+    }
+    header>a {
+        padding: 0;
+        flex-basis: 0;
+    }
+    nav {
+        flex-basis: 60%;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    #section2 {
+        border-bottom: 8px solid var(--gray);
+        border-top: 8px solid var(--gray);
+        margin: 2rem auto 1rem;
+    }
+    #section2, #section3{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #section2 h2, #section3 h2{
+        flex-basis: 100%;
+    }
+    #section3 p {
+        flex-basis: 30%;
+    }
+}
